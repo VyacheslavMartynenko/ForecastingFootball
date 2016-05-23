@@ -34,6 +34,7 @@
 				<beans:value>com.practice.math.model.Club</beans:value>
                 <beans:value>com.practice.math.model.Player</beans:value>
                 <beans:value>com.practice.math.model.Result</beans:value>
+				<beans:value>com.practice.math.model.Game</beans:value>
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">
@@ -67,6 +68,14 @@
 
     <beans:bean id="resultService" class="com.practice.math.service.ResultService">
         <beans:property name="resultDAO" ref="resultDAO"/>
+    </beans:bean>
+
+    <beans:bean id="gameDAO" class="com.practice.math.dao.GameDAO">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </beans:bean>
+
+    <beans:bean id="gameService" class="com.practice.math.service.GameService">
+        <beans:property name="gameDAO" ref="gameDAO"/>
     </beans:bean>
 
 	<context:component-scan base-package="com.practice.math" />

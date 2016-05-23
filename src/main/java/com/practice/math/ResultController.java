@@ -1,9 +1,11 @@
 package com.practice.math;
 
 import com.practice.math.model.Club;
+import com.practice.math.model.Game;
 import com.practice.math.model.Player;
 import com.practice.math.model.Result;
 import com.practice.math.service.ClubService;
+import com.practice.math.service.GameService;
 import com.practice.math.service.PlayerService;
 import com.practice.math.service.ResultService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,7 @@ public class ResultController {
     private ResultService resultService;
     private ClubService clubService;
     private PlayerService playerService;
+    private GameService gameService;
 
     @Autowired
     @Qualifier(value = "resultService")
@@ -40,6 +43,12 @@ public class ResultController {
     @Qualifier(value = "playerService")
     public void setPlayerService(PlayerService ps) {
         this.playerService = ps;
+    }
+
+    @Autowired
+    @Qualifier(value = "gameService")
+    public void setGameService(GameService ps) {
+        this.gameService = ps;
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
@@ -63,6 +72,8 @@ public class ResultController {
 
             List<Player> playersFromFirstClub = playerService.getPlayersByClub(p.getFirstClub());
             List<Player> playersFromSecondClub = playerService.getPlayersByClub(p.getSecondClub());
+
+            List<Game> games = gameService.getGamesByClubs(p.getFirstClub(), p.getSecondClub());
 
             //TODO calculate rates using club stats or players skills
 

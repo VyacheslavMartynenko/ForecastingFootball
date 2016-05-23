@@ -37,11 +37,6 @@ public class ClubController {
     @RequestMapping(value = "club/add", method = RequestMethod.POST)
     public String addClub(@ModelAttribute("club") Club p) {
         if (p.getId() == 0) {
-
-            Club club = clubService.getClubByID(12);
-            String league = club.getLeague();
-            System.out.println(league);
-
             this.clubService.addClub(p);
         } else {
             this.clubService.updateClub(p);

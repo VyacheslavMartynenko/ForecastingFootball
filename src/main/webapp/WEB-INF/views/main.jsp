@@ -13,5 +13,6 @@
 <a href="<c:url value="/players"/>">Players List</a>
 <a href="<c:url value="/clubs"/>">Clubs List</a>
 <a href="<c:url value="/results"/>">Results List</a>
+<a href="<c:url value="/games"/>">Games List</a>
 </body>
 </html>

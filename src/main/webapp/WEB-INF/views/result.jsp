@@ -44,7 +44,7 @@
             <tr>
                 <td>
                     <form:label path="firstRate">
-                        <spring:message text="Second Rate"/>
+                        <spring:message text="First Rate"/>
                     </form:label>
                 </td>
                 <td>
