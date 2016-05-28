@@ -32,6 +32,16 @@
         </c:if>
         <tr>
             <td>
+                <form:label path="position">
+                    <spring:message text="Position"/>
+                </form:label>
+            </td>
+            <td>
+                <form:input path="position"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
                 <form:label path="name">
                     <spring:message text="Name"/>
                 </form:label>
@@ -70,6 +80,7 @@
     <table class="tg">
         <tr>
             <th width="80">Club ID</th>
+            <th width="120">Club Position</th>
             <th width="120">Club Name</th>
             <th width="120">Club League</th>
             <th width="60">Edit</th>
@@ -78,6 +89,7 @@
         <c:forEach items="${listClubs}" var="club">
             <tr>
                 <td>${club.id}</td>
+                <td>${club.position}</td>
                 <td>${club.name}</td>
                 <td>${club.league}</td>
                 <td><a href="<c:url value='edit/${club.id}' />">Edit</a></td>

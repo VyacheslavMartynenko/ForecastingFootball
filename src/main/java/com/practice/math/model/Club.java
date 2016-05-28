@@ -16,9 +16,19 @@ public class Club {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    private int position;
+
     private String name;
 
     private String league;
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
 
     public int getId() {
         return id;
