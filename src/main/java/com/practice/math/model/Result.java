@@ -18,11 +18,27 @@ public class Result {
 
     private String firstClub;
 
+    private int firstInjures;
+
+    private int firstRest;
+
+    private int firstAttack;
+
+    private int firstDefence;
+
     private double firstRate;
 
     private String algorithm;
 
     private double secondRate;
+
+    private int secondDefence;
+
+    private int secondAttack;
+
+    private int secondRest;
+
+    private int secondInjures;
 
     private String secondClub;
 
@@ -40,6 +56,38 @@ public class Result {
 
     public void setFirstClub(String firstClub) {
         this.firstClub = firstClub;
+    }
+
+    public int getFirstInjures() {
+        return firstInjures;
+    }
+
+    public void setFirstInjures(int firstInjures) {
+        this.firstInjures = firstInjures;
+    }
+
+    public int getFirstRest() {
+        return firstRest;
+    }
+
+    public void setFirstRest(int firstRest) {
+        this.firstRest = firstRest;
+    }
+
+    public int getFirstAttack() {
+        return firstAttack;
+    }
+
+    public void setFirstAttack(int firstAttack) {
+        this.firstAttack = firstAttack;
+    }
+
+    public int getFirstDefence() {
+        return firstDefence;
+    }
+
+    public void setFirstDefence(int firstDefence) {
+        this.firstDefence = firstDefence;
     }
 
     public double getFirstRate() {
@@ -64,6 +112,38 @@ public class Result {
 
     public void setSecondRate(double secondRate) {
         this.secondRate = secondRate;
+    }
+
+    public int getSecondDefence() {
+        return secondDefence;
+    }
+
+    public void setSecondDefence(int secondDefence) {
+        this.secondDefence = secondDefence;
+    }
+
+    public int getSecondAttack() {
+        return secondAttack;
+    }
+
+    public void setSecondAttack(int secondAttack) {
+        this.secondAttack = secondAttack;
+    }
+
+    public int getSecondRest() {
+        return secondRest;
+    }
+
+    public void setSecondRest(int secondRest) {
+        this.secondRest = secondRest;
+    }
+
+    public int getSecondInjures() {
+        return secondInjures;
+    }
+
+    public void setSecondInjures(int secondInjures) {
+        this.secondInjures = secondInjures;
     }
 
     public String getSecondClub() {
