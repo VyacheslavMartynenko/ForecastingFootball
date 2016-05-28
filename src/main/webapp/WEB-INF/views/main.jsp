@@ -5,7 +5,7 @@
 <%@ page session="false" %>
 <html>
 <head>
-    <title>Players Page</title>
+    <title>Main Page</title>
     <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet" type="text/css"/>
     <script src="<c:url value="/resources/js/bootstrap.js" />"></script>
 </head>

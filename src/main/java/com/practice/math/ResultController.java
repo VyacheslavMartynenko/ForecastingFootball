@@ -74,6 +74,8 @@ public class ResultController {
             List<Player> playersFromSecondClub = playerService.getPlayersByClub(p.getSecondClub());
 
             List<Game> games = gameService.getGamesByClubs(p.getFirstClub(), p.getSecondClub());
+            List<Game> lastFirstClubGames = gameService.getGamesByClub(p.getFirstClub());
+            List<Game> lastSecondClubGames = gameService.getGamesByClub(p.getSecondClub());
 
             //TODO calculate rates using club stats or players skills
 

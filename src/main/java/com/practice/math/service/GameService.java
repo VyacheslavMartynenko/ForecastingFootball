@@ -37,6 +37,11 @@ public class GameService {
     }
 
     @Transactional
+    public List<Game> getGamesByClub(String club) {
+        return this.gameDAO.getGamesByClub(club);
+    }
+
+    @Transactional
     public List<Game> getGamesByClubs(String firstClub, String secondClub) {
         return this.gameDAO.getGamesByClubs(firstClub, secondClub);
     }

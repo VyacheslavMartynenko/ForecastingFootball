@@ -34,6 +34,14 @@ public class GameDAO {
     }
 
     @SuppressWarnings("unchecked")
+    public List<Game> getGamesByClub(String club){
+        Query query = sessionFactory.getCurrentSession().
+                createQuery("from Game where firstClub=:club OR secondClub=:club");
+        query.setParameter("club", club);
+        return query.list();
+    }
+
+    @SuppressWarnings("unchecked")
     public List<Game> getGamesByClubs(String firstClub, String secondClub){
         Query query = sessionFactory.getCurrentSession().
                 createQuery("from Game where (firstClub=:firstClub OR firstClub=:secondClub)" +
