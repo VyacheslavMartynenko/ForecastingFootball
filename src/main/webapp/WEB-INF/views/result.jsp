@@ -42,6 +42,16 @@
         </tr>
         <tr>
             <td>
+                <form:label path="firstInjures">
+                    <spring:message text="First Injures"/>
+                </form:label>
+            </td>
+            <td>
+                <form:input path="firstInjures"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
                 <form:label path="firstRest">
                     <spring:message text="First Rest"/>
                 </form:label>
