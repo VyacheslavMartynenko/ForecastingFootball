@@ -67,21 +67,20 @@ public class ResultController {
 
     @RequestMapping(value = "result/add", method = RequestMethod.POST)
     public String addResult(@ModelAttribute("result") Result p) {
+        Club firstClub = clubService.getClubByName(p.getFirstClub());
+        Club secondClub = clubService.getClubByName(p.getSecondClub());
+
+        List<Player> playersFromFirstClub = playerService.getPlayersByClub(p.getFirstClub());
+        List<Player> playersFromSecondClub = playerService.getPlayersByClub(p.getSecondClub());
+
+        List<Game> lastFirstClubGames = gameService.getGamesByClub(p.getFirstClub());
+        List<Game> lastSecondClubGames = gameService.getGamesByClub(p.getSecondClub());
+
+        WeightedSum weightedSum = new WeightedSum(firstClub, secondClub, lastFirstClubGames, lastSecondClubGames, p);
+        p.setFirstRate(weightedSum.getFirstRate());
+        p.setSecondRate(weightedSum.getSecondRate());
+
         if (p.getId() == 0) {
-
-            Club firstClub = clubService.getClubByName(p.getFirstClub());
-            Club secondClub = clubService.getClubByName(p.getSecondClub());
-
-            List<Player> playersFromFirstClub = playerService.getPlayersByClub(p.getFirstClub());
-            List<Player> playersFromSecondClub = playerService.getPlayersByClub(p.getSecondClub());
-
-            List<Game> lastFirstClubGames = gameService.getGamesByClub(p.getFirstClub());
-            List<Game> lastSecondClubGames = gameService.getGamesByClub(p.getSecondClub());
-
-            WeightedSum weightedSum = new WeightedSum(firstClub, secondClub, lastFirstClubGames, lastSecondClubGames, p);
-            p.setFirstRate(weightedSum.getFirstRate());
-            p.setSecondRate(weightedSum.getSecondRate());
-
             this.resultService.addResult(p);
         } else {
             this.resultService.updateResult(p);
