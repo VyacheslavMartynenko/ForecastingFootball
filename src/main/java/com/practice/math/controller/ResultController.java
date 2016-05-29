@@ -9,7 +9,6 @@ import com.practice.math.service.ClubService;
 import com.practice.math.service.GameService;
 import com.practice.math.service.PlayerService;
 import com.practice.math.service.ResultService;
-import com.practice.math.utils.MatchWeights;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -76,9 +75,11 @@ public class ResultController {
         List<Game> lastFirstClubGames = gameService.getGamesByClub(p.getFirstClub());
         List<Game> lastSecondClubGames = gameService.getGamesByClub(p.getSecondClub());
 
-        WeightedSum weightedSum = new WeightedSum(firstClub, secondClub, lastFirstClubGames, lastSecondClubGames, p);
-        p.setFirstRate(weightedSum.getFirstRate());
-        p.setSecondRate(weightedSum.getSecondRate());
+        if (p.getAlgorithm().equals("WeightedSum")) {
+            WeightedSum weightedSum = new WeightedSum(firstClub, secondClub, lastFirstClubGames, lastSecondClubGames, p);
+            p.setFirstRate(weightedSum.getFirstRate());
+            p.setSecondRate(weightedSum.getSecondRate());
+        }
 
         if (p.getId() == 0) {
             this.resultService.addResult(p);
