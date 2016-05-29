@@ -12,56 +12,55 @@
 <div class="container-fluid">
     <h3>Add a Club</h3>
     <c:url var="addAction" value="/clubs/club/add"></c:url>
-
-        <form:form action="${addAction}" commandName="club" class="form-horizontal">
-            <c:if test="${!empty club.name}">
-                <div class="form-group">
-                        <form:label class="control-label col-sm-2" path="id">
-                            <spring:message text="ID"/>
-                        </form:label>
-                    <div class="col-sm-10">
-                        <form:input path="id" class="form-control" readonly="true" size="8" disabled="true"/>
-                        <form:hidden path="id"/>
-                    </div>
-                </div>
-            </c:if>
+    <form:form action="${addAction}" commandName="club" class="form-horizontal">
+        <c:if test="${!empty club.name}">
             <div class="form-group">
-                    <form:label class="control-label col-sm-2" path="position">
-                        <spring:message text="Position"/>
-                    </form:label>
+                <form:label class="control-label col-sm-2" path="id">
+                    <spring:message text="ID"/>
+                </form:label>
                 <div class="col-sm-10">
-                    <form:input class="form-control" path="position"/>
+                    <form:input path="id" class="form-control" readonly="true" size="8" disabled="true"/>
+                    <form:hidden path="id"/>
                 </div>
             </div>
-            <div class="form-group">
-                    <form:label class="control-label col-sm-2" path="name">
-                        <spring:message text="Name"/>
-                    </form:label>
-                <div class="col-sm-10">
-                    <form:input class="form-control" path="name"/>
-                </div>
+        </c:if>
+        <div class="form-group">
+            <form:label class="control-label col-sm-2" path="position">
+                <spring:message text="Position"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input class="form-control" path="position"/>
             </div>
-            <div class="form-group">
-                    <form:label class="control-label col-sm-2" path="league">
-                        <spring:message text="League"/>
-                    </form:label>
-                <div class="col-sm-10">
-                    <form:input class="form-control" path="league"/>
-                </div>
+        </div>
+        <div class="form-group">
+            <form:label class="control-label col-sm-2" path="name">
+                <spring:message text="Name"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input class="form-control" path="name"/>
             </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <c:if test="${!empty club.name}">
-                        <input type="submit" class="btn btn-default"
-                               value="<spring:message text="Edit Club"/>"/>
-                    </c:if>
-                    <c:if test="${empty club.name}">
-                        <input type="submit" class="btn btn-default"
-                               value="<spring:message text="Add Club"/>"/>
-                    </c:if>
-                </div>
+        </div>
+        <div class="form-group">
+            <form:label class="control-label col-sm-2" path="league">
+                <spring:message text="League"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input class="form-control" path="league"/>
             </div>
-        </form:form>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <c:if test="${!empty club.name}">
+                    <input type="submit" class="btn btn-default"
+                           value="<spring:message text="Edit Club"/>"/>
+                </c:if>
+                <c:if test="${empty club.name}">
+                    <input type="submit" class="btn btn-default"
+                           value="<spring:message text="Add Club"/>"/>
+                </c:if>
+            </div>
+        </div>
+    </form:form>
 
     <h3>Clubs List</h3>
     <c:if test="${!empty listClubs}">

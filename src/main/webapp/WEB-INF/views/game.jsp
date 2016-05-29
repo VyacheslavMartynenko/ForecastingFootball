@@ -9,286 +9,241 @@
     <script src="<c:url value="/resources/js/bootstrap.js" />"></script>
 </head>
 <body>
-<h1>
-    Add a Game
-</h1>
-
-<c:url var="addAction" value="/games/game/add"></c:url>
-
-<form:form action="${addAction}" commandName="game">
-    <table>
+<div class="container-fluid">
+    <h3>Add a Game</h3>
+    <c:url var="addAction" value="/games/game/add"></c:url>
+    <form:form action="${addAction}" commandName="game" class="form-horizontal">
         <c:if test="${!empty game.firstClub}">
-            <tr>
-                <td>
-                    <form:label path="id">
-                        <spring:message text="ID"/>
-                    </form:label>
-                </td>
-                <td>
-                    <form:input path="id" readonly="true" size="8" disabled="true"/>
+            <div class="form-group">
+                <form:label path="id" class="control-label col-sm-2">
+                    <spring:message text="ID"/>
+                </form:label>
+                <div class="col-sm-10">
+                    <form:input path="id" class="form-control" readonly="true" size="8" disabled="true"/>
                     <form:hidden path="id"/>
-                </td>
-            </tr>
+                </div>
+            </div>
         </c:if>
-        <tr>
-            <td>
-                <form:label path="firstClub">
-                    <spring:message text="First Club"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="firstClub"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="firstGoals">
-                    <spring:message text="First Goals"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="firstGoals"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="firstShoots">
-                    <spring:message text="First Shoots"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="firstShoots"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="firstShootsTarget">
-                    <spring:message text="First Shoots Target"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="firstShootsTarget"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="firstPasses">
-                    <spring:message text="First Passes"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="firstPasses"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="firstPassesTarget">
-                    <spring:message text="First Passes Target"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="firstPassesTarget"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="firstPossession">
-                    <spring:message text="First Possession"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="firstPossession"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="firstCorners">
-                    <spring:message text="First Corners"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="firstCorners"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="firstDuels">
-                    <spring:message text="First Duels"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="firstDuels"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="matchDate">
-                    <spring:message text="Match Date"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="matchDate"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="secondDuels">
-                    <spring:message text="Second Duels"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="secondDuels"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="secondCorners">
-                    <spring:message text="Second Corners"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="secondCorners"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="secondPossession">
-                    <spring:message text="Second Possession"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="secondPossession"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="secondPassesTarget">
-                    <spring:message text="Second Passes Target"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="secondPassesTarget"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="secondPasses">
-                    <spring:message text="Second Passes"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="secondPasses"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="secondShootsTarget">
-                    <spring:message text="Second Shoots Target"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="secondShootsTarget"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="secondShoots">
-                    <spring:message text="Second Shoots"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="secondShoots"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="secondGoals">
-                    <spring:message text="Second Goals"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="secondGoals"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="secondClub">
-                    <spring:message text="Second Club"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="secondClub"/>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
+        <div class="form-group">
+            <form:label path="firstClub" class="control-label col-sm-2">
+                <spring:message text="First Club"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="firstClub" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="firstGoals" class="control-label col-sm-2">
+                <spring:message text="First Goals"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="firstGoals" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="firstShoots" class="control-label col-sm-2">
+                <spring:message text="First Shoots"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="firstShoots" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="firstShootsTarget" class="control-label col-sm-2">
+                <spring:message text="First Shoots Target"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="firstShootsTarget" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="firstPasses" class="control-label col-sm-2">
+                <spring:message text="First Passes"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="firstPasses" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="firstPassesTarget" class="control-label col-sm-2">
+                <spring:message text="First Passes Target"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="firstPassesTarget" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="firstPossession" class="control-label col-sm-2">
+                <spring:message text="First Possession"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="firstPossession" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="firstCorners" class="control-label col-sm-2">
+                <spring:message text="First Corners"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="firstCorners" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="firstDuels" class="control-label col-sm-2">
+                <spring:message text="First Duels"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="firstDuels" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="matchDate" class="control-label col-sm-2">
+                <spring:message text="Match Date"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="matchDate" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="secondDuels" class="control-label col-sm-2">
+                <spring:message text="Second Duels"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="secondDuels" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="secondCorners" class="control-label col-sm-2">
+                <spring:message text="Second Corners"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="secondCorners" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="secondPossession" class="control-label col-sm-2">
+                <spring:message text="Second Possession"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="secondPossession" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="secondPassesTarget" class="control-label col-sm-2">
+                <spring:message text="Second Passes Target"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="secondPassesTarget" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="secondPasses" class="control-label col-sm-2">
+                <spring:message text="Second Passes"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="secondPasses" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="secondShootsTarget" class="control-label col-sm-2">
+                <spring:message text="Second Shoots Target"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="secondShootsTarget" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="secondShoots" class="control-label col-sm-2">
+                <spring:message text="Second Shoots"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="secondShoots" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="secondGoals" class="control-label col-sm-2">
+                <spring:message text="Second Goals"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="secondGoals" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <form:label path="secondClub" class="control-label col-sm-2">
+                <spring:message text="Second Club"/>
+            </form:label>
+            <div class="col-sm-10">
+                <form:input path="secondClub" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
                 <c:if test="${!empty game.firstClub}">
-                    <input type="submit" class="btn btn-info"
+                    <input type="submit" class="btn btn-default"
                            value="<spring:message text="Edit Game"/>"/>
                 </c:if>
                 <c:if test="${empty game.firstClub}">
-                    <input type="submit" class="btn btn-info"
+                    <input type="submit" class="btn btn-default"
                            value="<spring:message text="Add Game"/>"/>
                 </c:if>
-            </td>
-        </tr>
-    </table>
-</form:form>
-<br>
-<h3>Games List</h3>
-<c:if test="${!empty listGames}">
-    <table class="tg">
-        <tr>
-            <th width="80">Game ID</th>
-            <th width="60">First Club</th>
-            <th width="60">First Goals</th>
-            <th width="60">First Shoots</th>
-            <th width="60">First Shoots Target</th>
-            <th width="60">First Passes</th>
-            <th width="60">First Passes Target</th>
-            <th width="60">First Possession</th>
-            <th width="60">First Corners</th>
-            <th width="60">First Duels</th>
-            <th width="60">Match Date</th>
-            <th width="60">Second Duels</th>
-            <th width="60">Second Corners</th>
-            <th width="60">Second Possession</th>
-            <th width="60">Second Passes Target</th>
-            <th width="60">Second Passes</th>
-            <th width="60">Second Shoots Target</th>
-            <th width="60">Second Shoots</th>
-            <th width="60">Second Goals</th>
-            <th width="60">Second Club</th>
-            <th width="60">Edit</th>
-            <th width="60">Delete</th>
-        </tr>
-        <c:forEach items="${listGames}" var="game">
+            </div>
+        </div>
+    </form:form>
+    <h3>Games List</h3>
+    <c:if test="${!empty listGames}">
+        <table class="tg table table-hover">
             <tr>
-                <td>${game.id}</td>
-                <td>${game.firstClub}</td>
-                <td>${game.firstGoals}</td>
-                <td>${game.firstShoots}</td>
-                <td>${game.firstShootsTarget}</td>
-                <td>${game.firstPasses}</td>
-                <td>${game.firstPassesTarget}</td>
-                <td>${game.firstPossession}</td>
-                <td>${game.firstCorners}</td>
-                <td>${game.firstDuels}</td>
-                <td>${game.matchDate}</td>
-                <td>${game.secondDuels}</td>
-                <td>${game.secondCorners}</td>
-                <td>${game.secondPossession}</td>
-                <td>${game.secondPassesTarget}</td>
-                <td>${game.secondPasses}</td>
-                <td>${game.secondShootsTarget}</td>
-                <td>${game.secondShoots}</td>
-                <td>${game.secondGoals}</td>
-                <td>${game.secondClub}</td>
-                <td><a href="<c:url value='edit/${game.id}' />">Edit</a></td>
-                <td><a href="<c:url value='remove/${game.id}' />">Delete</a></td>
+                <th>Game ID</th>
+                <th>First Club</th>
+                <th>First Goals</th>
+                <th>First Shoots</th>
+                <th>First Shoots Target</th>
+                <th>First Passes</th>
+                <th>First Passes Target</th>
+                <th>First Possession</th>
+                <th>First Corners</th>
+                <th>First Duels</th>
+                <th>Match Date</th>
+                <th>Second Duels</th>
+                <th>Second Corners</th>
+                <th>Second Possession</th>
+                <th>Second Passes Target</th>
+                <th>Second Passes</th>
+                <th>Second Shoots Target</th>
+                <th>Second Shoots</th>
+                <th>Second Goals</th>
+                <th>Second Club</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
-        </c:forEach>
-    </table>
-</c:if>
+            <c:forEach items="${listGames}" var="game">
+                <tr>
+                    <td>${game.id}</td>
+                    <td>${game.firstClub}</td>
+                    <td>${game.firstGoals}</td>
+                    <td>${game.firstShoots}</td>
+                    <td>${game.firstShootsTarget}</td>
+                    <td>${game.firstPasses}</td>
+                    <td>${game.firstPassesTarget}</td>
+                    <td>${game.firstPossession}</td>
+                    <td>${game.firstCorners}</td>
+                    <td>${game.firstDuels}</td>
+                    <td>${game.matchDate}</td>
+                    <td>${game.secondDuels}</td>
+                    <td>${game.secondCorners}</td>
+                    <td>${game.secondPossession}</td>
+                    <td>${game.secondPassesTarget}</td>
+                    <td>${game.secondPasses}</td>
+                    <td>${game.secondShootsTarget}</td>
+                    <td>${game.secondShoots}</td>
+                    <td>${game.secondGoals}</td>
+                    <td>${game.secondClub}</td>
+                    <td><a href="<c:url value='edit/${game.id}' />">Edit</a></td>
+                    <td><a href="<c:url value='remove/${game.id}' />">Delete</a></td>
+                </tr>
+            </c:forEach>
+        </table>
+    </c:if>
+</div>
 </body>
 </html>
