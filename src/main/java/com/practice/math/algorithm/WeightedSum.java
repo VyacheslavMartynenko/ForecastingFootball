@@ -4,12 +4,10 @@ import com.practice.math.model.Club;
 import com.practice.math.model.Game;
 import com.practice.math.model.Result;
 import com.practice.math.utils.MatchWeights;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class WeightedSum {
     private Club firstClub;
@@ -17,34 +15,34 @@ public class WeightedSum {
     private List<Game> firstClubGames;
     private List<Game> secondClubGames;
     private Result result;
-    private List<Integer> firstClubValues;
-    private List<Integer> secondClubValues;
+    private List<Double> firstClubValues;
+    private List<Double> secondClubValues;
     private List<MatchWeights> matchWeights;
 
     private double firstRate;
     private double secondRate;
 
-    private int firstSumPoints;
-    private int firstSumScore;
-    private int firstSumMiss;
-    private int secondSumPoints;
-    private int secondSumScore;
-    private int secondSumMiss;
+    private double firstSumPoints;
+    private double firstSumScore;
+    private double firstSumMiss;
+    private double secondSumPoints;
+    private double secondSumScore;
+    private double secondSumMiss;
 
-    private int firstAverageShoots;
-    private int firstAverageShootsTarget;
-    private int firstAveragePasses;
-    private int firstAveragePassesTarget;
-    private int firstAverageCorners;
-    private int firstAverageDuels;
-    private int firstAveragePossession;
-    private int secondAverageShoots;
-    private int secondAverageShootsTarget;
-    private int secondAveragePasses;
-    private int secondAveragePassesTarget;
-    private int secondAverageCorners;
-    private int secondAverageDuels;
-    private int secondAveragePossession;
+    private double firstAverageShoots;
+    private double firstAverageShootsTarget;
+    private double firstAveragePasses;
+    private double firstAveragePassesTarget;
+    private double firstAverageCorners;
+    private double firstAverageDuels;
+    private double firstAveragePossession;
+    private double secondAverageShoots;
+    private double secondAverageShootsTarget;
+    private double secondAveragePasses;
+    private double secondAveragePassesTarget;
+    private double secondAverageCorners;
+    private double secondAverageDuels;
+    private double secondAveragePossession;
 
 
     public WeightedSum(Club firstClub, Club secondClub, List<Game> firstClubGames, List<Game> secondClubGames, Result result) {
@@ -63,7 +61,7 @@ public class WeightedSum {
         calculateRelativeRates();
     }
 
-    private int calculateRelativeWeight(int firstValue, int secondValue) {
+    private double calculateRelativeWeight(double firstValue, double secondValue) {
         return firstValue / (firstValue + secondValue);
     }
 
@@ -105,13 +103,13 @@ public class WeightedSum {
                 firstAveragePossession += game.getSecondPossession();
             }
         }
-        firstAverageShoots = firstAverageShoots / 5;
-        firstAverageShootsTarget = firstAverageShootsTarget / 5;
-        firstAveragePasses = firstAveragePasses / 5;
-        firstAveragePassesTarget = firstAveragePassesTarget / 5;
-        firstAverageCorners = firstAverageCorners / 5;
-        firstAverageDuels = firstAverageDuels / 5;
-        firstAveragePossession = firstAveragePossession / 5;
+        firstAverageShoots = firstAverageShoots / firstClubGames.size();
+        firstAverageShootsTarget = firstAverageShootsTarget / firstClubGames.size();
+        firstAveragePasses = firstAveragePasses / firstClubGames.size();
+        firstAveragePassesTarget = firstAveragePassesTarget / firstClubGames.size();
+        firstAverageCorners = firstAverageCorners / firstClubGames.size();
+        firstAverageDuels = firstAverageDuels / firstClubGames.size();
+        firstAveragePossession = firstAveragePossession / firstClubGames.size();
 
         for (Game game : secondClubGames) {
             if (game.getFirstClub().equals(secondClub.getName())) {
@@ -150,13 +148,13 @@ public class WeightedSum {
                 secondAveragePossession += game.getSecondPossession();
             }
         }
-        secondAverageShoots = secondAverageShoots / 5;
-        secondAverageShootsTarget = secondAverageShootsTarget / 5;
-        secondAveragePasses = secondAveragePasses / 5;
-        secondAveragePassesTarget = secondAveragePassesTarget / 5;
-        secondAverageCorners = secondAverageCorners / 5;
-        secondAverageDuels = secondAverageDuels / 5;
-        secondAveragePossession = secondAveragePossession / 5;
+        secondAverageShoots = secondAverageShoots / secondClubGames.size();
+        secondAverageShootsTarget = secondAverageShootsTarget / secondClubGames.size();
+        secondAveragePasses = secondAveragePasses / secondClubGames.size();
+        secondAveragePassesTarget = secondAveragePassesTarget / secondClubGames.size();
+        secondAverageCorners = secondAverageCorners / secondClubGames.size();
+        secondAverageDuels = secondAverageDuels / secondClubGames.size();
+        secondAveragePossession = secondAveragePossession / secondClubGames.size();
     }
 
     private void addWeights() {
