@@ -1,4 +1,4 @@
-package com.practice.math;
+package com.practice.math.controller;
 
 import com.practice.math.model.Game;
 import com.practice.math.service.GameService;

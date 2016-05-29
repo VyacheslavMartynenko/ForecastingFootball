@@ -1,4 +1,4 @@
-package com.practice.math;
+package com.practice.math.controller;
 
 import com.practice.math.model.Player;
 import com.practice.math.service.PlayerService;
