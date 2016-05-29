@@ -8,7 +8,7 @@
     <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet" type="text/css"/>
     <script src="<c:url value="/resources/js/bootstrap.js" />"></script>
 </head>
-<body>
+<body background="/resources/img/bg.jpg">
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">

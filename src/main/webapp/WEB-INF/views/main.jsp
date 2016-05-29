@@ -9,7 +9,7 @@
     <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet" type="text/css"/>
     <script src="<c:url value="/resources/js/bootstrap.js" />"></script>
 </head>
-<body>
+<body background="/resources/img/bg.jpg">
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -24,5 +24,13 @@
         </ul>
     </div>
 </nav>
+<div class="container-fluid">
+    <div class="row">
+        <div style="width: 500; margin: auto">
+            <h3 style="width: 500; margin: auto; text-align: center">Football Forecasting</h3>
+            <img style="margin: auto" src="/resources/img/logo.png" alt="logo" width="500" height="480">
+        </div>
+    </div>
+</div>
 </body>
 </html>
