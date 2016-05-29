@@ -61,8 +61,12 @@ public class WeightedSum {
         calculateRelativeRates();
     }
 
-    private double calculateRelativeWeight(double firstValue, double secondValue) {
+    private double calculateRelativePositiveWeight(double firstValue, double secondValue) {
         return firstValue / (firstValue + secondValue);
+    }
+
+    private double calculateRelativeNegativeWeight(double firstValue, double secondValue) {
+        return  1 - (firstValue / (firstValue + secondValue));
     }
 
     private void calculateRelativeWeights() {
@@ -177,41 +181,41 @@ public class WeightedSum {
     }
 
     private void addFirstClubRelativeWeights() {
-        firstClubValues.add(calculateRelativeWeight(firstClub.getPosition(), secondClub.getPosition()));
-        firstClubValues.add(calculateRelativeWeight(firstSumPoints, secondSumPoints));
-        firstClubValues.add(calculateRelativeWeight(firstSumScore, secondSumScore));
-        firstClubValues.add(calculateRelativeWeight(firstSumMiss, secondSumMiss));
-        firstClubValues.add(calculateRelativeWeight(firstAverageShoots, secondAverageShoots));
-        firstClubValues.add(calculateRelativeWeight(firstAverageShootsTarget, secondAverageShootsTarget));
-        firstClubValues.add(calculateRelativeWeight(firstAveragePasses, secondAveragePasses));
-        firstClubValues.add(calculateRelativeWeight(firstAveragePassesTarget, secondAverageShootsTarget));
-        firstClubValues.add(calculateRelativeWeight(firstAverageCorners, secondAverageCorners));
-        firstClubValues.add(calculateRelativeWeight(firstAverageDuels, secondAverageDuels));
-        firstClubValues.add(calculateRelativeWeight(firstAveragePossession, secondAveragePossession));
-        firstClubValues.add(calculateRelativeWeight(result.getFirstInjures(), result.getSecondInjures()));
-        firstClubValues.add(calculateRelativeWeight(result.getFirstRest(), result.getSecondRest()));
-        firstClubValues.add(calculateRelativeWeight(result.getFirstAttack(), result.getSecondAttack()));
-        firstClubValues.add(calculateRelativeWeight(result.getFirstDefence(), result.getSecondDefence()));
-        firstClubValues.add(calculateRelativeWeight(1, 0));
+        firstClubValues.add(calculateRelativePositiveWeight(firstClub.getPosition(), secondClub.getPosition()));
+        firstClubValues.add(calculateRelativePositiveWeight(firstSumPoints, secondSumPoints));
+        firstClubValues.add(calculateRelativePositiveWeight(firstSumScore, secondSumScore));
+        firstClubValues.add(calculateRelativeNegativeWeight(firstSumMiss, secondSumMiss));
+        firstClubValues.add(calculateRelativePositiveWeight(firstAverageShoots, secondAverageShoots));
+        firstClubValues.add(calculateRelativePositiveWeight(firstAverageShootsTarget, secondAverageShootsTarget));
+        firstClubValues.add(calculateRelativePositiveWeight(firstAveragePasses, secondAveragePasses));
+        firstClubValues.add(calculateRelativePositiveWeight(firstAveragePassesTarget, secondAverageShootsTarget));
+        firstClubValues.add(calculateRelativePositiveWeight(firstAverageCorners, secondAverageCorners));
+        firstClubValues.add(calculateRelativePositiveWeight(firstAverageDuels, secondAverageDuels));
+        firstClubValues.add(calculateRelativePositiveWeight(firstAveragePossession, secondAveragePossession));
+        firstClubValues.add(calculateRelativeNegativeWeight(result.getFirstInjures(), result.getSecondInjures()));
+        firstClubValues.add(calculateRelativePositiveWeight(result.getFirstRest(), result.getSecondRest()));
+        firstClubValues.add(calculateRelativePositiveWeight(result.getFirstAttack(), result.getSecondAttack()));
+        firstClubValues.add(calculateRelativeNegativeWeight(result.getFirstDefence(), result.getSecondDefence()));
+        firstClubValues.add(calculateRelativePositiveWeight(1, 0));
     }
 
     private void addSecondClubRelativeWeights() {
-        secondClubValues.add(calculateRelativeWeight(secondClub.getPosition(), firstClub.getPosition()));
-        secondClubValues.add(calculateRelativeWeight(secondSumPoints, firstSumPoints));
-        secondClubValues.add(calculateRelativeWeight(secondSumScore, firstSumScore));
-        secondClubValues.add(calculateRelativeWeight(secondSumMiss, firstSumMiss));
-        secondClubValues.add(calculateRelativeWeight(secondAverageShoots, firstAverageShoots));
-        secondClubValues.add(calculateRelativeWeight(secondAverageShootsTarget, firstAverageShootsTarget));
-        secondClubValues.add(calculateRelativeWeight(secondAveragePasses, firstAveragePasses));
-        secondClubValues.add(calculateRelativeWeight(secondAverageShootsTarget, firstAveragePassesTarget));
-        secondClubValues.add(calculateRelativeWeight(secondAverageCorners, firstAverageCorners));
-        secondClubValues.add(calculateRelativeWeight(secondAverageDuels, firstAverageDuels));
-        secondClubValues.add(calculateRelativeWeight(secondAveragePossession, firstAveragePossession));
-        secondClubValues.add(calculateRelativeWeight(result.getSecondInjures(), result.getFirstInjures()));
-        secondClubValues.add(calculateRelativeWeight(result.getSecondRest(), result.getFirstRest()));
-        secondClubValues.add(calculateRelativeWeight(result.getSecondAttack(), result.getFirstAttack()));
-        secondClubValues.add(calculateRelativeWeight(result.getSecondDefence(), result.getFirstDefence()));
-        secondClubValues.add(calculateRelativeWeight(0, 1));
+        secondClubValues.add(calculateRelativePositiveWeight(secondClub.getPosition(), firstClub.getPosition()));
+        secondClubValues.add(calculateRelativePositiveWeight(secondSumPoints, firstSumPoints));
+        secondClubValues.add(calculateRelativePositiveWeight(secondSumScore, firstSumScore));
+        secondClubValues.add(calculateRelativePositiveWeight(secondSumMiss, firstSumMiss));
+        secondClubValues.add(calculateRelativePositiveWeight(secondAverageShoots, firstAverageShoots));
+        secondClubValues.add(calculateRelativePositiveWeight(secondAverageShootsTarget, firstAverageShootsTarget));
+        secondClubValues.add(calculateRelativePositiveWeight(secondAveragePasses, firstAveragePasses));
+        secondClubValues.add(calculateRelativePositiveWeight(secondAverageShootsTarget, firstAveragePassesTarget));
+        secondClubValues.add(calculateRelativePositiveWeight(secondAverageCorners, firstAverageCorners));
+        secondClubValues.add(calculateRelativePositiveWeight(secondAverageDuels, firstAverageDuels));
+        secondClubValues.add(calculateRelativePositiveWeight(secondAveragePossession, firstAveragePossession));
+        secondClubValues.add(calculateRelativePositiveWeight(result.getSecondInjures(), result.getFirstInjures()));
+        secondClubValues.add(calculateRelativePositiveWeight(result.getSecondRest(), result.getFirstRest()));
+        secondClubValues.add(calculateRelativePositiveWeight(result.getSecondAttack(), result.getFirstAttack()));
+        secondClubValues.add(calculateRelativePositiveWeight(result.getSecondDefence(), result.getFirstDefence()));
+        secondClubValues.add(calculateRelativePositiveWeight(0, 1));
     }
 
     private void calculateRelativeRates() {
