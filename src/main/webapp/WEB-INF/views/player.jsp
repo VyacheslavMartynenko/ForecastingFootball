@@ -158,8 +158,8 @@
                     <td>${player.pass}</td>
                     <td>${player.defence}</td>
                     <td>${player.goalkeeper}</td>
-                    <td><a href="<c:url value='edit/${player.id}' />">Edit</a></td>
-                    <td><a href="<c:url value='remove/${player.id}' />">Delete</a></td>
+                    <td><a href="<c:url value='/players/edit/${player.id}' />">Edit</a></td>
+                    <td><a href="<c:url value='/players/remove/${player.id}' />">Delete</a></td>
                 </tr>
             </c:forEach>
         </table>

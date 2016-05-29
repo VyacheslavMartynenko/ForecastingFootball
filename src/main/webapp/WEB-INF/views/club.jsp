@@ -79,8 +79,8 @@
                     <td>${club.position}</td>
                     <td>${club.name}</td>
                     <td>${club.league}</td>
-                    <td><a href="<c:url value='edit/${club.id}' />">Edit</a></td>
-                    <td><a href="<c:url value='remove/${club.id}' />">Delete</a></td>
+                    <td><a href="<c:url value='/clubs/edit/${club.id}' />">Edit</a></td>
+                    <td><a href="<c:url value='/clubs/remove/${club.id}' />">Delete</a></td>
                 </tr>
             </c:forEach>
         </table>

@@ -238,8 +238,8 @@
                     <td>${game.secondShoots}</td>
                     <td>${game.secondGoals}</td>
                     <td>${game.secondClub}</td>
-                    <td><a href="<c:url value='edit/${game.id}' />">Edit</a></td>
-                    <td><a href="<c:url value='remove/${game.id}' />">Delete</a></td>
+                    <td><a href="<c:url value='/games/edit/${game.id}' />">Edit</a></td>
+                    <td><a href="<c:url value='/games/remove/${game.id}' />">Delete</a></td>
                 </tr>
             </c:forEach>
         </table>

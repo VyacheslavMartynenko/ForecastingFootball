@@ -184,8 +184,8 @@
                     <td>${result.secondRest}</td>
                     <td>${result.secondInjures}</td>
                     <td>${result.secondClub}</td>
-                    <td><a href="<c:url value='edit/${result.id}' />">Edit</a></td>
-                    <td><a href="<c:url value='remove/${result.id}' />">Delete</a></td>
+                    <td><a href="<c:url value='/results/edit/${result.id}' />">Edit</a></td>
+                    <td><a href="<c:url value='/results/remove/${result.id}' />">Delete</a></td>
                 </tr>
             </c:forEach>
         </table>
