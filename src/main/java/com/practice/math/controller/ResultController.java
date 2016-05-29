@@ -1,5 +1,6 @@
 package com.practice.math.controller;
 
+import com.practice.math.algorithm.WeightedSum;
 import com.practice.math.model.Club;
 import com.practice.math.model.Game;
 import com.practice.math.model.Player;
@@ -77,10 +78,9 @@ public class ResultController {
             List<Game> lastFirstClubGames = gameService.getGamesByClub(p.getFirstClub());
             List<Game> lastSecondClubGames = gameService.getGamesByClub(p.getSecondClub());
 
-            //TODO calculate rates using club stats or players skills
-
-            p.setFirstRate(1.12);
-            p.setSecondRate(2.32);
+            WeightedSum weightedSum = new WeightedSum(firstClub, secondClub);
+            p.setFirstRate(weightedSum.calculateFirstRate());
+            p.setSecondRate(weightedSum.calculateSecondRate());
 
             this.resultService.addResult(p);
         } else {
