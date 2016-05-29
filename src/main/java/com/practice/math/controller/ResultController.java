@@ -1,5 +1,6 @@
 package com.practice.math.controller;
 
+import com.practice.math.algorithm.FuzzyRules;
 import com.practice.math.algorithm.WeightedSum;
 import com.practice.math.model.Club;
 import com.practice.math.model.Game;
@@ -79,6 +80,10 @@ public class ResultController {
             WeightedSum weightedSum = new WeightedSum(firstClub, secondClub, lastFirstClubGames, lastSecondClubGames, p);
             p.setFirstRate(weightedSum.getFirstRate());
             p.setSecondRate(weightedSum.getSecondRate());
+        } else if (p.getAlgorithm().equals("FuzzyRules")) {
+            FuzzyRules fuzzyRules = new FuzzyRules(firstClub, secondClub, lastFirstClubGames, lastSecondClubGames, p);
+            p.setFirstRate(fuzzyRules.getFirstRate());
+            p.setSecondRate(fuzzyRules.getSecondRate());
         }
 
         if (p.getId() == 0) {

@@ -230,10 +230,10 @@ public class WeightedSum {
     }
 
     public double getFirstRate() {
-        return new BigDecimal(firstRate).setScale(2, RoundingMode.HALF_UP).doubleValue();
+        return new BigDecimal(firstRate * 100).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 
     public double getSecondRate() {
-        return new BigDecimal(secondRate).setScale(2, RoundingMode.HALF_UP).doubleValue();
+        return new BigDecimal(secondRate * 100).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 }
