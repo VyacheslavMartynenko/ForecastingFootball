@@ -13,8 +13,8 @@ public class FuzzyRules {
     private Club firstClub;
     private Club secondClub;
     private List<Game> firstClubGames;
-    private final List<Game> secondClubGames;
-    private final Result result;
+    private List<Game> secondClubGames;
+    private Result result;
 
     private double firstRate;
     private double secondRate;
@@ -71,22 +71,22 @@ public class FuzzyRules {
         if (result.getFirstInjures() - result.getSecondInjures() == 0) {
             firstInjuresRate += 0.5 * MatchWeights.INJURES.getValue();
             secondInjuresRate += 0.5 * MatchWeights.INJURES.getValue();
-        } else if (result.getFirstInjures() - result.getSecondInjures() > 2) {
+        } else if (result.getFirstInjures() - result.getSecondInjures() < 2) {
             firstInjuresRate += 0.55 * MatchWeights.INJURES.getValue();
             secondInjuresRate += 0.45 * MatchWeights.INJURES.getValue();
-        } else if (result.getSecondInjures() - result.getFirstInjures() > 2) {
+        } else if (result.getSecondInjures() - result.getFirstInjures() < 2) {
             secondInjuresRate += 0.45 * MatchWeights.INJURES.getValue();
             firstInjuresRate += 0.55 * MatchWeights.INJURES.getValue();
-        } else if (result.getFirstInjures() - result.getSecondInjures() > 4) {
+        } else if (result.getFirstInjures() - result.getSecondInjures() < 4) {
             firstInjuresRate += 0.6 * MatchWeights.INJURES.getValue();
             secondInjuresRate += 0.4 * MatchWeights.INJURES.getValue();
-        } else if (result.getSecondInjures() - result.getFirstInjures() > 4) {
+        } else if (result.getSecondInjures() - result.getFirstInjures() < 4) {
             secondInjuresRate += 0.6 * MatchWeights.INJURES.getValue();
             firstInjuresRate += 0.4 * MatchWeights.INJURES.getValue();
-        } else if (result.getFirstInjures() - result.getSecondInjures() > 6) {
+        } else if (result.getFirstInjures() - result.getSecondInjures() < 6) {
             firstInjuresRate += 0.65 * MatchWeights.INJURES.getValue();
             secondInjuresRate += 0.35 * MatchWeights.INJURES.getValue();
-        } else if (result.getSecondInjures() - result.getFirstInjures() > 6) {
+        } else if (result.getSecondInjures() - result.getFirstInjures() < 6) {
             secondInjuresRate += 0.65 * MatchWeights.INJURES.getValue();
             firstInjuresRate += 0.35 * MatchWeights.INJURES.getValue();
         }
@@ -188,10 +188,10 @@ public class FuzzyRules {
     }
 
     public double getFirstRate() {
-        return new BigDecimal(firstRate).setScale(4, RoundingMode.HALF_UP).doubleValue() * 100;
+        return new BigDecimal(firstRate * 100).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 
     public double getSecondRate() {
-        return new BigDecimal(secondRate).setScale(4, RoundingMode.HALF_UP).doubleValue() * 100;
+        return new BigDecimal(secondRate * 100).setScale(2, RoundingMode.HALF_UP).doubleValue();
     }
 }
