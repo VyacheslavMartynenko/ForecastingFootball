@@ -196,7 +196,7 @@ public class WeightedSum {
         firstClubValues.add(calculateRelativePositiveWeight(result.getFirstRest(), result.getSecondRest()));
         firstClubValues.add(calculateRelativePositiveWeight(result.getFirstAttack(), result.getSecondAttack()));
         firstClubValues.add(calculateRelativeNegativeWeight(result.getFirstDefence(), result.getSecondDefence()));
-        firstClubValues.add(calculateRelativePositiveWeight(1, 0));
+        firstClubValues.add(calculateRelativePositiveWeight(0, 1));
     }
 
     private void addSecondClubRelativeWeights() {
@@ -215,7 +215,7 @@ public class WeightedSum {
         secondClubValues.add(calculateRelativePositiveWeight(result.getSecondRest(), result.getFirstRest()));
         secondClubValues.add(calculateRelativePositiveWeight(result.getSecondAttack(), result.getFirstAttack()));
         secondClubValues.add(calculateRelativeNegativeWeight(result.getSecondDefence(), result.getFirstDefence()));
-        secondClubValues.add(calculateRelativePositiveWeight(0, 1));
+        secondClubValues.add(calculateRelativePositiveWeight(1, 0));
     }
 
     private void calculateRelativeRates() {
