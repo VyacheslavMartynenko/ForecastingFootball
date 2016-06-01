@@ -104,8 +104,8 @@ public class UniversalModeling {
         double firstWinning = firstRating / 100;
         double secondWinning = secondRating / 100;
 
-        double firstAdvantage = 0.5 * Math.sqrt((firstWinning / (1 - firstWinning)) + ((1 -  firstWinning) / firstWinning) - 2);
-        double secondAdvantage = 0.5 * Math.sqrt((secondWinning / (1 - secondWinning)) + ((1 -  secondWinning) / secondWinning) - 2);
+        double firstAdvantage = 0.8 * (firstWinning / (1 - firstWinning));
+        double secondAdvantage = 0.8 * (secondWinning / (1 - secondWinning));
 
         double firstInfo = Math.sqrt(firstAdvantage * firstAdvantage + 1);
         double secondInfo = Math.sqrt(secondAdvantage * secondAdvantage + 1);
